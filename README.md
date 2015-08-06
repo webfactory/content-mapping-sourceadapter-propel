@@ -17,8 +17,9 @@ use Webfactory\ContentMapping\SourceAdapter\Propel\GenericPropelSourceAdapter;
 
 $classNameToSynchronize = 'MyClass';
 $resultSetMethod = 'doSelectRS';
+$logger = ...; // optional: any PSR-3 logger
 
-$sourceAdapter = new GenericPropelSourceAdapter($classNameToSynchronize, $resultSetMethod);
+$sourceAdapter = new GenericPropelSourceAdapter($classNameToSynchronize, $resultSetMethod, $logger);
 
 $synchronizer = new Synchronizer($sourceAdapter, $mapper, $destinationAdapter, $logger);
 ```

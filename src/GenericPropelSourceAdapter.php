@@ -8,6 +8,8 @@
 
 namespace Webfactory\ContentMapping\SourceAdapter\Propel;
 
+use Psr\Log\LoggerInterface;
+
 /**
  * Automagically implementation of the adapter for Propel as a source system.
  *
@@ -28,11 +30,13 @@ final class GenericPropelSourceAdapter extends PropelSourceAdapter
     /**
      * @param string $className Name of the class of the objects provided by this source.
      * @param string $resultSetMethod Name of the method to call on the peer to get the objects ordered by their id.
+     * @param LoggerInterface|null $logger
      */
-    public function __construct($className, $resultSetMethod = 'doSelectRS')
+    public function __construct($className, $resultSetMethod = 'doSelectRS', LoggerInterface $logger = null)
     {
         $this->className = $className;
         $this->resultSetMethod = $resultSetMethod;
+        $this->logger = $this->setLogger($logger);
     }
 
     /**

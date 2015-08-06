@@ -37,7 +37,9 @@ abstract class PropelSourceAdapter implements SourceAdapter
     }
 
     /**
-     * {@inheritDoc}
+     * Set a logger.
+     *
+     * @param LoggerInterface $logger
      */
     public function setLogger(LoggerInterface $logger)
     {
