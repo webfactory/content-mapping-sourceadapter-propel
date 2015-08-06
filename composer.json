@@ -1,0 +1,29 @@
+{
+    "name": "webfactory/content-mapping-sourceadapter-propel",
+    "description": "SourceAdapter for Propel Databases inside the webfactory/content-mapping mini framework.",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "webfactory GmbH",
+            "email": "info@webfactory.de",
+            "homepage": "http://www.webfactory.de",
+            "role": "Developer"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.3.0",
+        "webfactory/content-mapping": "^3.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Webfactory\\ContentMapping\\SourceAdapter\\Propel\\": "src"
+        }
+    },
+
+    "suggest": {
+        "webfactory/classloader": "(not open source yet) For autoloading peer classes in GenericPropelSourceAdapter::createPeer (can be easily overwritten)"
+    }
+}
