@@ -32,7 +32,7 @@ final class ResultSetWithCallbackIterator implements \Iterator
      * @param \MySQLResultSet $resultSet
      * @param $callback
      */
-    public function __construct(\MySQLResultSet $resultSet, $callback)
+    public function __construct(\ResultSet $resultSet, $callback)
     {
         $this->resultSet = $resultSet;
         $this->callback = $callback;
