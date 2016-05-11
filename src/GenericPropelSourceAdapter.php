@@ -36,7 +36,7 @@ final class GenericPropelSourceAdapter extends PropelSourceAdapter
     {
         $this->className = $className;
         $this->resultSetMethod = $resultSetMethod;
-        $this->logger = $this->setLogger($logger);
+        $this->setLogger($logger);
     }
 
     /**
