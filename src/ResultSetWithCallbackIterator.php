@@ -89,7 +89,7 @@ final class ResultSetWithCallbackIterator implements \Iterator
     {
         if ($this->resultSet) {
             $this->current = null;
-            return $this->resultSet->next();
+            $this->resultSet->next();
         }
     }
 }
