@@ -41,6 +41,7 @@ final class ResultSetWithCallbackIterator implements \Iterator
     /**
      * @return mixed|null Result of the callback applied on the current element.
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         if ($this->resultSet && !$this->current) {
@@ -53,6 +54,7 @@ final class ResultSetWithCallbackIterator implements \Iterator
     /**
      * @return null
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return null;
@@ -61,7 +63,7 @@ final class ResultSetWithCallbackIterator implements \Iterator
     /**
      * {@inheritDoc}
      */
-    public function rewind()
+    public function rewind(): void
     {
         if ($this->resultSet) {
             $this->current = null;
@@ -72,7 +74,7 @@ final class ResultSetWithCallbackIterator implements \Iterator
     /**
      * {@inheritDoc}
      */
-    public function valid()
+    public function valid(): bool
     {
         if ($this->resultSet) {
             return !$this->resultSet->isAfterLast();
@@ -83,7 +85,7 @@ final class ResultSetWithCallbackIterator implements \Iterator
      * @return bool
      * @throws \SQLException
      */
-    public function next()
+    public function next(): void
     {
         if ($this->resultSet) {
             $this->current = null;
